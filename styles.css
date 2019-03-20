@@ -1,0 +1,152 @@
+body{
+  background-color:black;
+  font-size: 1em;
+}
+
+h1{
+  color:white;
+}
+
+canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+input:focus {
+  border-bottom: 0.5px solid #898989 !important;
+  -webkit-box-shadow: 0 1px 0 0 #898989!important;
+  -moz-box-shadow: 0 1px 0 0 #898989!important;
+  box-shadow: 0 1px 0 0 #898989!important;
+}
+
+button {
+  background-color :black !important;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align:left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button:hover{
+  color: grey;
+
+}
+
+button:focus{background-color:black;}
+
+#button {
+  background-color:gray !important;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  float:left;
+  font-size:1em;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#button:hover{
+  color: grey;
+}
+
+
+#button:focus{background-color:black;}
+
+
+.JPO_open {
+    font-size: 3em !important;
+
+
+}
+
+.JPO_close {
+  background-color:white !important;
+  color: black;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+
+
+#JPO {
+  padding:5%;
+  height:60%;
+  width:60%;
+  background:white;
+
+}
+
+label{
+
+    font-size: 1em;
+
+}
+
+input {
+    font-size: 1em;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+  #JPO{
+    padding:5%;
+    height:30%;
+    width:70%;
+    background:white;
+
+  }
+
+
+
+  .JPO_open {
+      font-size: 100px !important;
+
+
+  }
+
+#button {
+font-size: 40px!important;
+
+}
+
+button .label{
+  text-align: left;
+}
+
+
+
+.JPO_close {
+
+
+  font-size: 40px!important;
+
+}
+
+  label{
+
+      font-size: 40px!important;
+
+  }
+
+  input {
+      font-size: 40px!important;
+  }
+
+}
