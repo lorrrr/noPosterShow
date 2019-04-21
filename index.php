@@ -1,45 +1,69 @@
 <?php
-
-  if(isset($_POST['mood'])) {
-
+  if(isset($_POST['colors'])) {
 
           $myfile = fopen("type.txt", "a") or die("Unable to open file!");
-          $newData = $_POST["mood"];
-          fwrite($myfile, $newData ."\n");
+          $newData = $_POST["colors"];
+          $newData1 = $_POST['range'];
+
+          fwrite($myfile, $newData1." ");
+          fwrite($myfile, $newData."\n");
 
           fclose($myfile);
           unset($_POST);
 
       header('location:index.php');
-
-
 }
     ?>
 <!doctype html>
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
-  <meta name="viewport" content="width= 640,initial-scale=0.5,minimum-scale=1.0,maximum-scale=1.0" />
+
+    <meta Http-Equiv="Cache" content="no-cache">
+    <meta Http-Equiv="Pragma-Control" content="no-cache">
+    <meta Http-Equiv="Cache-directive" Content="no-cache">
+    <meta Http-Equiv="Pragma-directive" Content="no-cache">
+    <meta Http-Equiv="Cache-Control" Content="no-cache">
+    <meta Http-Equiv="Pragma" Content="no-cache">
+    <meta Http-Equiv="Expires" Content="0">
+    <meta Http-Equiv="Pragma-directive: no-cache">
+    <meta Http-Equiv="Cache-directive: no-cache">
+
+        <meta http-equiv="expires" content="Sun, 30 Sep 2018 21:30:00 GMT" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no"/>
+
   <title>No Poster Show</title>
   <!--Style -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-   <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <!-- p5-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
-   <script type="text/javascript" src="sketch.js"></script>
+ <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://use.typekit.net/ltp0xeq.css">
+
+  <!--Matter.js-->
+  <script src="matter.js" type="text/javascript"></script>
+
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <!-- jQuery Popup Overlay -->
   <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js">
   </script>
+  <!-- p5-->
+    <script src="p5.js"></script>
+     <script language="javascript" type="text/javascript" src="p5.dom.js"></script>
 
+    <script type="text/javascript" src="faceSketch.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+<!-- color picker-->
+ <script src="spectrum.js"></script>
+ <link rel='stylesheet' href='spectrum.css' />
+</head>
+<body>
+
+<!-- Popup Setup -->
   <script>
     $(document).ready(function() {
-      // Initialize the plugin
       $('#JPO').popup();
       $.fn.popup.defaults.pagecontainer = '#page'
     });
@@ -47,42 +71,58 @@
 
 
   <!-- posterpage) -->
-  <div id="page">
-    <header></header>
-    <main>
-    <button class="JPO_open">+</button>
-    </main>
 
 
-      <div id="sketch"></div>
+
+    <div id="page">
+        <header></header>
+        <main>
+        <button class="JPO_open">+</button>
+        </main>
+
+
+          <div id="sketch"></div>
+
+
   </div>
 
-  <!-- popup -->
+  <!-- popup page -->
   <div id="JPO">
     <div id="popup">
 
 
-
-
-
+                <div id = "faceSketch" style = "display:block;padding:30px;"></div>
+        <div  style = " display:inline-block;">
           <form method="POST">
                <label for="mood">How are you today?</label>
-               <input id ="mood" type="text" name="mood" value="Great!" style="color:black !important"><br>
-               <!--input id= "button" type="submit" value="Enter" name="Submit1"-->
-
+                <input type="range" min="1" max="100" value="50" class="slider" name= "range" id="myRange">
+               <input type='text' id="custom" name = "colors" />
+               <p></p>
+               <!--input id ="mood" type="text" name="mood" value="Great!" style="color:black !important"><br>-->
+               <input id= "submitButton" type="submit" value="Enter" name="Submit1">
+       <button class="JPO_close" >Close</button>
           </form>
 
+        </div>
 
-    <script>
-    if ( window.history.replaceState ) {
-      window.history.replaceState( null, null, window.location.href );
-    }
-    </script>
+          <script>
+          $("#custom").spectrum({
+              color: "#bbb",
+              preferredFormat: "hex"
+          });
+          $("#custom").on('move.spectrum', function(e, color) {
+
+
+              color.toHexString();
+
+
+           });
+          </script>
 
 
 
 
-       <button class="JPO_close" >Close</button>
+
      </div>
 
     </div>

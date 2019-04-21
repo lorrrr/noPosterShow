@@ -1,10 +1,48 @@
-Great!
-Okay
-if you cut me Ill bleed coffee
-what
-okay
-Great!
-what
-hjk
-Great!
-wGreat!
+100 #f8ff00
+87 #ff0505
+99 #b371ff
+50 #003fff
+50 
+86 #ff00c3
+50 #a400ff
+50 #15fc00
+17 #00ffaf
+50 #cdf72c
+50 #4ec3ff
+50 #ffba00
+95 #000000
+50 #003b4b
+50 #27f93b
+1 #ff3737
+13 #ffc4c4
+50 #fffdc7
+50 #43384b
+50 #35eaff
+81 #cbddce
+1 #a0adbf
+100 #f4f4f4
+50 #e7e3ff
+50 
+100 #ff6f00
+1 #f8ff00
+50 
+50 #49737b
+13 #ff0f0f
+100 #4451ff
+50 #00ff91
+100 #f8ff00
+50 #48888f
+1 #0011ff
+50 #ff0095
+89 #00d6a0
+100 #ff2664
+100 #e52222
+100 #ffba4e
+50 #ffc79c
+88 #ffe0c2
+100 #0068ff
+100 #ecf6ff50 
+50 
+50 
+50 
+50 
